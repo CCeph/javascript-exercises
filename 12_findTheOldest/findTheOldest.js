@@ -1,5 +1,5 @@
 const findTheOldest = function(mainArray) {
-    let peopleArray = [...mainArray]
+    let peopleArray = JSON.parse(JSON.stringify(mainArray));
     let oldest = peopleArray.reduce((oldestPerson, person) => {
         if (!("yearOfDeath" in person)) {
             person.age = (new Date().getFullYear()) - person.yearOfBirth;
